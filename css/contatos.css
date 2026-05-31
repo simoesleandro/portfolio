@@ -1,0 +1,100 @@
+/* =========================================
+   CONTATO
+========================================= */
+#contato {
+  padding-bottom: 100px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 60px;
+  align-items: center;
+}
+
+.contact-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--neon);
+  font-weight: 500;
+  margin-bottom: 14px;
+  font-family: var(--font-mono);
+  opacity: 0.7;
+}
+
+.contact-h {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+.contact-h span {
+  color: var(--neon);
+  text-shadow: 0 0 30px rgba(0, 240, 180, 0.3);
+}
+
+.contact-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 300px;
+}
+
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.c-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--bg2);
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+  color: var(--neon);
+}
+
+.c-icon:hover {
+  border-color: var(--neon);
+  background: rgba(0, 240, 180, 0.06);
+}
+
+.c-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.cta-btn {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: 4px;
+  background: var(--neon);
+  color: var(--bg);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: box-shadow 0.2s, opacity 0.2s;
+}
+
+.cta-btn:hover {
+  box-shadow: 0 0 20px rgba(0, 240, 180, 0.4);
+  opacity: 0.9;
+}

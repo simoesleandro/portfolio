@@ -1,0 +1,285 @@
+/* =========================================
+   RESET & BASE
+========================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:       #080c10;
+  --bg2:      #0d1117;
+  --bg3:      #111820;
+  --neon:     #00f0b4;
+  --neon2:    #00c8ff;
+  --neon-dim: rgba(0, 240, 180, 0.08);
+  --border:   rgba(0, 240, 180, 0.15);
+  --border2:  rgba(0, 240, 180, 0.30);
+  --text:     #e2f0ea;
+  --muted:    #5a7a6e;
+  --muted2:   #3a5048;
+  --muted3:   #7a9a8e;
+  --font-display: 'Syne', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: inherit;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* =========================================
+   SCANLINE OVERLAY (atmosphera tech)
+========================================= */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 240, 180, 0.012) 2px,
+    rgba(0, 240, 180, 0.012) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* =========================================
+   GRID BACKGROUND
+========================================= */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 240, 180, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 180, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================================
+   LAYOUT WRAPPER
+========================================= */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   NAV
+========================================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8, 12, 16, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.nav-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--neon);
+  box-shadow: 0 0 8px var(--neon), 0 0 20px rgba(0, 240, 180, 0.4);
+  animation: pulse 2.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--neon), 0 0 20px rgba(0, 240, 180, 0.4); }
+  50%       { opacity: 0.6; box-shadow: 0 0 4px var(--neon); }
+}
+
+.nav-logo span {
+  color: var(--neon);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-links .nav-cta {
+  color: var(--neon);
+  border: 0.5px solid var(--neon);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links .nav-cta:hover {
+  background: var(--neon);
+  color: var(--bg);
+}
+
+/* =========================================
+   SECTION COMMON
+========================================= */
+section {
+  padding: 70px 0;
+  border-top: 0.5px solid var(--border);
+}
+
+.sec-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.sec-index {
+  font-size: 11px;
+  color: var(--neon);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  font-family: var(--font-mono);
+  opacity: 0.7;
+}
+
+.sec-title {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.sec-line {
+  flex: 1;
+  height: 0.5px;
+  background: var(--border);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+  border-top: 0.5px solid var(--border);
+  padding: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--muted2);
+  font-family: var(--font-mono);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 700px) {
+  .container { padding: 0 20px; }
+
+  .nav { flex-wrap: wrap; row-gap: 10px; padding: 14px 0; }
+  .nav-links { gap: 16px; width: 100%; }
+
+  .hero { padding: 60px 0 50px; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-avatar { display: none; }
+  .hero-name { font-size: 40px; }
+
+  .sobre-grid { grid-template-columns: 1fr; gap: 32px; }
+  .sobre-stats { grid-template-columns: 1fr 1fr; }
+
+  .proj-item { grid-template-columns: 36px 1fr; }
+  .proj-right { grid-column: 2; align-items: flex-start; }
+  .proj-chips { display: none; }
+
+  .form-grid { grid-template-columns: 1fr; }
+
+  .extras-grid { grid-template-columns: 1fr; gap: 32px; }
+
+  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .contact-right { align-items: flex-start; }
+}
+
+/* =========================================
+   MOTION PREFERENCE
+========================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

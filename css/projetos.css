@@ -1,0 +1,96 @@
+/* =========================================
+   PROJETOS
+========================================= */
+.proj-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.proj-item {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 18px;
+  border-radius: 8px;
+  border: 0.5px solid transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.proj-item:hover {
+  background: rgba(0, 240, 180, 0.04);
+  border-color: var(--border);
+}
+
+.proj-item.featured {
+  background: rgba(0, 240, 180, 0.04);
+  border-color: var(--border);
+}
+
+.proj-num {
+  font-size: 11px;
+  color: var(--neon);
+  font-weight: 500;
+  font-family: var(--font-mono);
+  opacity: 0.6;
+}
+
+.proj-name {
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.proj-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.proj-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.proj-chips {
+  display: flex;
+  gap: 5px;
+}
+
+.p-chip {
+  font-size: 9px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-weight: 500;
+  font-family: var(--font-mono);
+}
+
+.pc-neon { background: rgba(0, 240, 180, 0.1); color: var(--neon); border: 0.5px solid rgba(0, 240, 180, 0.25); }
+.pc-blue { background: rgba(0, 200, 255, 0.08); color: var(--neon2); border: 0.5px solid rgba(0, 200, 255, 0.2); }
+
+.proj-link {
+  font-size: 10px;
+  color: var(--neon);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.proj-item:hover .proj-link {
+  opacity: 1;
+}
+
+.proj-link svg {
+  width: 10px;
+  height: 10px;
+}
