@@ -94,3 +94,12 @@
   width: 10px;
   height: 10px;
 }
+
+.proj-note {
+  font-size: 10px;
+  color: var(--muted);
+  opacity: 0.5;
+  margin-top: 5px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
