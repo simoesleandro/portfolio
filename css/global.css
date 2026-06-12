@@ -187,63 +187,57 @@ header {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.08em;
-  color: var(--cyan);
+  color: #e2e8f0;
   font-family: var(--font-mono);
   text-decoration: none;
   background: transparent;
-  border: 1px solid rgba(6, 182, 212, 0.25);
+  border: none;
   border-radius: 20px;
   white-space: nowrap;
-  overflow: hidden;
+  z-index: 0;
 }
 
-.nav-cta span {
+.nav-cta-inner {
+  position: absolute;
+  inset: 1.5px;
+  border-radius: 18px;
+  background: var(--bg);
+  z-index: -1;
+}
+
+.nav-cta-text {
   position: relative;
   z-index: 1;
 }
 
-.electric-border {
+.nav-cta::before {
+  content: '';
   position: absolute;
-  inset: -20px;
-  border-radius: 20px;
-  pointer-events: none;
-  overflow: visible;
-}
-
-.electric-glow {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #22d3ee 0%, #8b5cf6 50%, transparent 70%);
-  filter: blur(10px);
+  inset: -2px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #06b6d4, #8b5cf6, #06b6d4, #a78bfa, #06b6d4);
+  background-size: 300% 300%;
+  animation: aurora-btn 3s linear infinite;
+  z-index: -2;
+  filter: blur(6px);
   opacity: 0.85;
-  top: 50%;
-  left: -25px;
-  transform: translateY(-50%);
-  animation: glow-orbit 2.5s linear infinite;
 }
 
-@keyframes glow-orbit {
-  0%   { left: -10px;  top: -10px;  background: radial-gradient(circle, #22d3ee 0%, #06b6d4 50%, transparent 70%); }
-  25%  { left: calc(100% - 10px); top: -10px;  background: radial-gradient(circle, #a78bfa 0%, #8b5cf6 50%, transparent 70%); }
-  50%  { left: calc(100% - 10px); top: calc(100% - 10px); background: radial-gradient(circle, #22d3ee 0%, #06b6d4 50%, transparent 70%); }
-  75%  { left: -10px;  top: calc(100% - 10px); background: radial-gradient(circle, #a78bfa 0%, #8b5cf6 50%, transparent 70%); }
-  100% { left: -10px;  top: -10px;  background: radial-gradient(circle, #22d3ee 0%, #06b6d4 50%, transparent 70%); }
+.nav-cta::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 21px;
+  background: linear-gradient(135deg, #06b6d4, #8b5cf6, #06b6d4, #a78bfa);
+  background-size: 300% 300%;
+  animation: aurora-btn 3s linear infinite;
+  z-index: -1;
 }
 
-.nav-cta:hover {
-  border-color: rgba(6, 182, 212, 0.5);
-}
-
-.nav-cta:hover .electric-glow {
-  filter: blur(10px);
-  opacity: 1;
-  animation-duration: 1.8s;
-}
-
-.nav-cta:hover span {
-  color: #22d3ee;
+@keyframes aurora-btn {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* =========================================
