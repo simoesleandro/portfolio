@@ -26,29 +26,46 @@
           <li><a href="#formacao">Formação</a></li>
           <li><a href="#contato" class="nav-cta">
             <svg class="electric-border" viewBox="0 0 120 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="auroraGlow" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="36">
+                  <stop offset="0%"   stop-color="#06b6d4"/>
+                  <stop offset="50%"  stop-color="#8b5cf6"/>
+                  <stop offset="100%" stop-color="#06b6d4"/>
+                  <animateTransform attributeName="gradientTransform"
+                    type="rotate"
+                    from="0 60 18" to="360 60 18"
+                    dur="4s"
+                    repeatCount="indefinite"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Borda aurora base -->
               <rect x="1" y="1" width="118" height="34" rx="17" ry="17"
-                stroke="#06b6d4"
-                stroke-width="1"
-                stroke-opacity="0.25"
+                stroke="url(#auroraGlow)"
+                stroke-width="1.2"
+                stroke-opacity="0.6"
                 fill="none"/>
+
+              <!-- Ponto de luz percorrendo -->
               <rect x="1" y="1" width="118" height="34" rx="17" ry="17"
-                stroke="#22d3ee"
-                stroke-width="2"
+                stroke="#ffffff"
+                stroke-width="3"
                 fill="none"
-                stroke-dasharray="14 276"
+                stroke-dasharray="10 280"
                 stroke-dashoffset="0"
-                stroke-linecap="round">
+                stroke-linecap="round"
+                opacity="0.9">
                 <animate attributeName="stroke-dashoffset"
                   from="0" to="-290"
-                  dur="2.8s"
+                  dur="2.5s"
                   repeatCount="indefinite"/>
                 <animate attributeName="stroke"
-                  values="#22d3ee;#a78bfa;#22d3ee"
-                  dur="2.8s"
+                  values="#22d3ee;#a78bfa;#22d3ee;#06b6d4;#22d3ee"
+                  dur="2.5s"
                   repeatCount="indefinite"/>
                 <animate attributeName="stroke-width"
-                  values="2;2.5;2"
-                  dur="2.8s"
+                  values="3;4;3"
+                  dur="2.5s"
                   repeatCount="indefinite"/>
               </rect>
             </svg>
