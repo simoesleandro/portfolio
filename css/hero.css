@@ -39,11 +39,15 @@
   font-size: clamp(44px, 6vw, 64px);
   font-weight: 600;
   color: var(--text);
-  line-height: 1.0;
+  line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 8px;
   opacity: 0;
   animation: fadeUp 0.6s ease 0.2s forwards;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 14px;
 }
 
 .hero-name span {

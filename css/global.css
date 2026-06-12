@@ -155,7 +155,10 @@ header {
 }
 
 .nav-logo span {
-  color: var(--neon);
+  color: var(--cyan);
+  font-family: var(--font-orbitron);
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 
 .nav-links {
