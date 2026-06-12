@@ -204,10 +204,10 @@ header {
 
 .electric-border {
   position: absolute;
-  inset: 0;
+  inset: -20px;
   border-radius: 20px;
   pointer-events: none;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .electric-glow {
