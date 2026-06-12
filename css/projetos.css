@@ -1,68 +1,43 @@
-/* PROJETOS */
 .proj-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-/* Card base — com preview */
 .proj-item {
   border-radius: 10px;
   border: 0.5px solid rgba(0, 240, 180, 0.12);
   background: #0a0e14;
   transition: border-color 0.2s;
+  overflow: hidden;
 }
 
 .proj-item:hover {
   border-color: rgba(0, 240, 180, 0.28);
 }
 
-/* Preview mockup area */
 .proj-preview {
+  height: 160px;
+  overflow: hidden;
   background: #060a0e;
-  padding: 16px 20px 14px;
   border-bottom: 0.5px solid rgba(0, 240, 180, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  min-height: 68px;
-  border-radius: 10px 10px 0 0;
 }
 
-.preview-bar {
-  height: 5px;
-  border-radius: 3px;
-  background: linear-gradient(90deg, rgba(0, 240, 180, 0.4), rgba(0, 200, 255, 0.25));
+.proj-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0.75;
+  transition: opacity 0.3s, transform 0.4s;
+  display: block;
 }
 
-.preview-bar-sm {
-  height: 4px;
-  border-radius: 3px;
-  background: rgba(0, 240, 180, 0.08);
+.proj-item:hover .proj-preview img {
+  opacity: 0.95;
+  transform: scale(1.02);
 }
 
-.preview-row {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-
-.preview-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: rgba(0, 240, 180, 0.5);
-  flex-shrink: 0;
-}
-
-.preview-block {
-  height: 16px;
-  border-radius: 3px;
-  background: rgba(0, 200, 255, 0.08);
-  border: 0.5px solid rgba(0, 200, 255, 0.15);
-}
-
-/* Card body */
 .proj-body {
   padding: 16px 20px;
   display: grid;
@@ -106,7 +81,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 .p-chip {
@@ -135,13 +110,9 @@
 }
 
 .proj-item:hover .proj-link { opacity: 1; }
-
 .proj-link svg { width: 10px; height: 10px; }
 
-/* =====================
-   DESTAQUE — Sentinela RJ
-   Aurora border animada
-===================== */
+/* DESTAQUE — Sentinela RJ */
 .proj-item.destaque {
   border: none;
   background: #080c12;
@@ -154,14 +125,7 @@
   position: absolute;
   inset: -1.5px;
   border-radius: 11px;
-  background: linear-gradient(
-    135deg,
-    #06b6d4,
-    #8b5cf6,
-    #06b6d4,
-    #a78bfa,
-    #06b6d4
-  );
+  background: linear-gradient(135deg, #06b6d4, #8b5cf6, #06b6d4, #a78bfa, #06b6d4);
   background-size: 300% 300%;
   animation: aurora-border 4s ease-in-out infinite;
   z-index: -1;
@@ -187,7 +151,6 @@
   z-index: 1;
 }
 
-/* Badge destaque */
 .proj-badge {
   display: inline-flex;
   align-items: center;
@@ -216,7 +179,6 @@
   50%       { opacity: 0.3; transform: scale(0.6); }
 }
 
-/* Mini stats Sentinela */
 .proj-stats {
   display: flex;
   flex-direction: column;
@@ -252,12 +214,6 @@
 
 .proj-stat.amber .proj-stat-val { color: #f59e0b; }
 
-/* Destaque body layout diferente */
-.proj-item.destaque .proj-body {
-  grid-template-columns: 30px 1fr;
-  gap: 14px;
-}
-
 .destaque-content {
   display: flex;
   gap: 20px;
@@ -266,11 +222,15 @@
 
 .destaque-text { flex: 1; }
 
-/* Responsive */
+.proj-item.destaque .proj-body {
+  grid-template-columns: 30px 1fr;
+}
+
 @media (max-width: 700px) {
   .proj-body { grid-template-columns: 30px 1fr; }
   .proj-right { grid-column: 2; align-items: flex-start; }
   .proj-chips { justify-content: flex-start; }
   .destaque-content { flex-direction: column; }
   .proj-stats { flex-direction: row; min-width: unset; }
+  .proj-preview { height: 120px; }
 }
