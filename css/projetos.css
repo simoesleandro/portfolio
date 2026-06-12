@@ -9,7 +9,6 @@
 .proj-item {
   border-radius: 10px;
   border: 0.5px solid rgba(0, 240, 180, 0.12);
-  overflow: hidden;
   background: #0a0e14;
   transition: border-color 0.2s;
 }
@@ -27,6 +26,7 @@
   flex-direction: column;
   gap: 7px;
   min-height: 68px;
+  border-radius: 10px 10px 0 0;
 }
 
 .preview-bar {
@@ -143,17 +143,17 @@
    Aurora border animada
 ===================== */
 .proj-item.destaque {
-  position: relative;
   border: none;
   background: #080c12;
+  position: relative;
+  z-index: 0;
 }
 
 .proj-item.destaque::before {
   content: '';
   position: absolute;
-  inset: 0;
-  border-radius: 10px;
-  padding: 1.5px;
+  inset: -1.5px;
+  border-radius: 11px;
   background: linear-gradient(
     135deg,
     #06b6d4,
@@ -163,19 +163,23 @@
     #06b6d4
   );
   background-size: 300% 300%;
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
   animation: aurora-border 4s ease-in-out infinite;
-  z-index: 0;
+  z-index: -1;
+}
+
+.proj-item.destaque::after {
+  content: '';
+  position: absolute;
+  inset: 1.5px;
+  border-radius: 9px;
+  background: #080c12;
+  z-index: -1;
 }
 
 @keyframes aurora-border {
-  0%   { background-position: 0% 50%; opacity: 0.7; }
-  50%  { background-position: 100% 50%; opacity: 1; }
-  100% { background-position: 0% 50%; opacity: 0.7; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .proj-item.destaque > * {
