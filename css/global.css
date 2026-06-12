@@ -212,21 +212,24 @@ header {
 
 .electric-glow {
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: radial-gradient(circle, #22d3ee 0%, #8b5cf6 40%, transparent 70%);
-  filter: blur(8px);
-  opacity: 0.9;
-  offset-path: path('M 20 0 A 20 18 0 1 1 19.9 0');
-  animation: orbit 2.5s linear infinite;
+  background: radial-gradient(circle, #22d3ee 0%, #8b5cf6 50%, transparent 70%);
+  filter: blur(10px);
+  opacity: 0.85;
+  top: 50%;
+  left: -25px;
+  transform: translateY(-50%);
+  animation: glow-orbit 2.5s linear infinite;
 }
 
-@keyframes orbit {
-  0%   { offset-distance: 0%;   background: radial-gradient(circle, #22d3ee 0%, #06b6d4 40%, transparent 70%); }
-  33%  { background: radial-gradient(circle, #a78bfa 0%, #8b5cf6 40%, transparent 70%); }
-  66%  { background: radial-gradient(circle, #22d3ee 0%, #06b6d4 40%, transparent 70%); }
-  100% { offset-distance: 100%; background: radial-gradient(circle, #22d3ee 0%, #06b6d4 40%, transparent 70%); }
+@keyframes glow-orbit {
+  0%   { left: -10px;  top: -10px;  background: radial-gradient(circle, #22d3ee 0%, #06b6d4 50%, transparent 70%); }
+  25%  { left: calc(100% - 10px); top: -10px;  background: radial-gradient(circle, #a78bfa 0%, #8b5cf6 50%, transparent 70%); }
+  50%  { left: calc(100% - 10px); top: calc(100% - 10px); background: radial-gradient(circle, #22d3ee 0%, #06b6d4 50%, transparent 70%); }
+  75%  { left: -10px;  top: calc(100% - 10px); background: radial-gradient(circle, #a78bfa 0%, #8b5cf6 50%, transparent 70%); }
+  100% { left: -10px;  top: -10px;  background: radial-gradient(circle, #22d3ee 0%, #06b6d4 50%, transparent 70%); }
 }
 
 .nav-cta:hover {
