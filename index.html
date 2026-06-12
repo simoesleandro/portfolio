@@ -7,7 +7,7 @@
   <title>Leandro Simões — Python · IA · Automação</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Syne:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Orbitron:wght@700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -40,10 +40,11 @@
               <div class="eyebrow-line" aria-hidden="true"></div>
               Disponível para oportunidades
             </div>
+            <div class="hero-syntax">const dev = {</div>
             <h1 class="hero-name">
-              Leandro<br><span>Simões.</span>
+              Leandro <span class="hero-name-orbitron">SIMÕES</span> <span class="hero-name-violet">Dev</span><span class="hero-bracket">}</span>
             </h1>
-            <p class="hero-role">Python Developer · IA & Automação · ADS</p>
+            <p class="hero-role">fullstack · ia aplicada · civic tech</p>
             <p class="hero-desc">
               Ex-empreendedor com 17 anos em gestão de projetos em transição de carreira para a área de tecnologia. Constrói ecossistemas reais com Python, APIs de IA e automação — antes mesmo de entrar na faculdade.
             </p>
@@ -56,9 +57,76 @@
               <span class="h-tag tag-dim">Rio de Janeiro</span>
             </div>
           </div>
-          <div class="hero-avatar" aria-hidden="true">
-            <div class="avatar-initials">LS</div>
-            <div class="avatar-sub">DEV · 2026</div>
+          <div class="hero-avatar" aria-label="Logo neural animado Leandro Simões">
+            <svg width="160" height="160" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="fp" x="-200%" y="-200%" width="500%" height="500%">
+                  <feGaussianBlur stdDeviation="3" result="b1"/>
+                  <feGaussianBlur stdDeviation="1" result="b2"/>
+                  <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="fls" x="-60%" y="-60%" width="220%" height="220%">
+                  <feGaussianBlur stdDeviation="5" result="b1"/>
+                  <feGaussianBlur stdDeviation="2" result="b2"/>
+                  <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="fcore" x="-80%" y="-80%" width="260%" height="260%">
+                  <feGaussianBlur stdDeviation="4" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <style>
+                  .s1{animation:sc 4.2s ease-in-out infinite 0.0s}.s2{animation:sv 3.8s ease-in-out infinite 0.9s}.s3{animation:sc 5.1s ease-in-out infinite 1.7s}.s4{animation:sv 4.6s ease-in-out infinite 0.4s}.s5{animation:sc 3.5s ease-in-out infinite 2.1s}.s6{animation:sv 4.9s ease-in-out infinite 1.2s}.s7{animation:sc 3.9s ease-in-out infinite 0.6s}.s8{animation:sv 5.3s ease-in-out infinite 1.8s}.s9{animation:sc 4.5s ease-in-out infinite 0.3s}
+                  .h1{animation:hc 4.2s ease-in-out infinite 0.3s}.h2{animation:hv 3.8s ease-in-out infinite 1.2s}.h3{animation:hc 5.1s ease-in-out infinite 2.0s}.h4{animation:hv 4.6s ease-in-out infinite 0.7s}.h5{animation:hc 3.5s ease-in-out infinite 2.4s}.h6{animation:hv 4.9s ease-in-out infinite 1.5s}
+                  .p1{animation:pc 4.2s ease-in-out infinite 0.0s}.p2{animation:pv 3.8s ease-in-out infinite 0.9s}.p3{animation:pc 5.1s ease-in-out infinite 1.7s}.p4{animation:pv 4.6s ease-in-out infinite 0.4s}.p5{animation:pc 3.5s ease-in-out infinite 2.1s}.p6{animation:pv 4.9s ease-in-out infinite 1.2s}.p7{animation:pc 3.9s ease-in-out infinite 0.6s}.p8{animation:pv 5.3s ease-in-out infinite 1.8s}.p9{animation:pc 4.5s ease-in-out infinite 0.3s}
+                  .n1{animation:nc 4.2s ease-in-out infinite 0.2s}.n2{animation:nv 3.8s ease-in-out infinite 1.0s}.n3{animation:nc 5.1s ease-in-out infinite 1.8s}.n4{animation:nv 4.6s ease-in-out infinite 0.5s}.n5{animation:nc 3.5s ease-in-out infinite 2.2s}.n6{animation:nv 4.9s ease-in-out infinite 1.3s}
+                  .ls-glow{animation:ls-sync 2.8s ease-in-out infinite 0.4s}
+                  .core-ring{animation:core-ring 2.8s ease-in-out infinite}
+                  @keyframes sc{0%,100%{stroke:#06b6d4;stroke-opacity:.1;stroke-width:.8;filter:none}10%{stroke:#22d3ee;stroke-opacity:1;stroke-width:2.2;filter:url(#fp)}28%{stroke:#06b6d4;stroke-opacity:.1;stroke-width:.8;filter:none}}
+                  @keyframes sv{0%,100%{stroke:#8b5cf6;stroke-opacity:.1;stroke-width:.8;filter:none}10%{stroke:#c4b5fd;stroke-opacity:1;stroke-width:2.2;filter:url(#fp)}28%{stroke:#8b5cf6;stroke-opacity:.1;stroke-width:.8;filter:none}}
+                  @keyframes hc{0%,100%{stroke:#06b6d4;stroke-opacity:.12;stroke-width:.6;filter:none}12%{stroke:#22d3ee;stroke-opacity:.8;stroke-width:1.8;filter:url(#fp)}30%{stroke:#06b6d4;stroke-opacity:.12;stroke-width:.6;filter:none}}
+                  @keyframes hv{0%,100%{stroke:#8b5cf6;stroke-opacity:.12;stroke-width:.6;filter:none}12%{stroke:#c4b5fd;stroke-opacity:.8;stroke-width:1.8;filter:url(#fp)}30%{stroke:#8b5cf6;stroke-opacity:.12;stroke-width:.6;filter:none}}
+                  @keyframes pc{0%,100%{stroke:#06b6d4;fill:#0f172a;r:3.5;filter:none}10%{stroke:#22d3ee;fill:#0d2535;r:4.5;filter:url(#fp)}28%{stroke:#06b6d4;fill:#0f172a;r:3.5;filter:none}}
+                  @keyframes pv{0%,100%{stroke:#8b5cf6;fill:#0f172a;r:3.5;filter:none}10%{stroke:#c4b5fd;fill:#150d30;r:4.5;filter:url(#fp)}28%{stroke:#8b5cf6;fill:#0f172a;r:3.5;filter:none}}
+                  @keyframes nc{0%,100%{stroke:#06b6d4;stroke-opacity:.4;fill:#060d1a;r:5}12%{stroke:#22d3ee;stroke-opacity:1;fill:#0a2535;r:6.5;filter:url(#fcore)}30%{stroke:#06b6d4;stroke-opacity:.4;fill:#060d1a;r:5}}
+                  @keyframes nv{0%,100%{stroke:#8b5cf6;stroke-opacity:.4;fill:#060d1a;r:5}12%{stroke:#c4b5fd;stroke-opacity:1;fill:#12082e;r:6.5;filter:url(#fcore)}30%{stroke:#8b5cf6;stroke-opacity:.4;fill:#060d1a;r:5}}
+                  @keyframes ls-sync{0%{fill:#06b6d4;opacity:.55;filter:none}20%{fill:#22d3ee;opacity:1;filter:url(#fls)}40%{fill:#a78bfa;opacity:.9;filter:url(#fls)}60%{fill:#06b6d4;opacity:.7;filter:url(#fls)}80%{fill:#22d3ee;opacity:1;filter:url(#fls)}100%{fill:#06b6d4;opacity:.55;filter:none}}
+                  @keyframes core-ring{0%,100%{stroke:#1e293b;stroke-opacity:.6}35%{stroke:#06b6d4;stroke-opacity:.5;filter:url(#fcore)}65%{stroke:#8b5cf6;stroke-opacity:.4}}
+                </style>
+              </defs>
+              <circle class="n1" cx="28" cy="35" r="5" fill="#060d1a" stroke="#06b6d4" stroke-width="1" stroke-opacity=".4"/>
+              <circle class="n2" cx="28" cy="70" r="5" fill="#060d1a" stroke="#8b5cf6" stroke-width="1" stroke-opacity=".4"/>
+              <circle class="n3" cx="28" cy="105" r="5" fill="#060d1a" stroke="#06b6d4" stroke-width="1" stroke-opacity=".4"/>
+              <circle class="n4" cx="112" cy="35" r="5" fill="#060d1a" stroke="#8b5cf6" stroke-width="1" stroke-opacity=".4"/>
+              <circle class="n5" cx="112" cy="70" r="5" fill="#060d1a" stroke="#06b6d4" stroke-width="1" stroke-opacity=".4"/>
+              <circle class="n6" cx="112" cy="105" r="5" fill="#060d1a" stroke="#8b5cf6" stroke-width="1" stroke-opacity=".4"/>
+              <line class="s1" x1="8" y1="25" x2="28" y2="35" stroke="#06b6d4"/>
+              <line class="s2" x1="8" y1="55" x2="28" y2="35" stroke="#8b5cf6"/>
+              <line class="s3" x1="8" y1="70" x2="28" y2="70" stroke="#06b6d4"/>
+              <line class="s4" x1="8" y1="85" x2="28" y2="70" stroke="#8b5cf6"/>
+              <line class="s5" x1="8" y1="105" x2="28" y2="105" stroke="#06b6d4"/>
+              <line class="s6" x1="132" y1="25" x2="112" y2="35" stroke="#8b5cf6"/>
+              <line class="s7" x1="132" y1="55" x2="112" y2="35" stroke="#06b6d4"/>
+              <line class="s8" x1="132" y1="70" x2="112" y2="70" stroke="#8b5cf6"/>
+              <line class="s9" x1="132" y1="105" x2="112" y2="105" stroke="#06b6d4"/>
+              <circle class="p1" cx="8" cy="25" r="3.5" fill="#0f172a" stroke="#06b6d4" stroke-width="1.2"/>
+              <circle class="p2" cx="8" cy="55" r="3.5" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.2"/>
+              <circle class="p3" cx="8" cy="70" r="3.5" fill="#0f172a" stroke="#06b6d4" stroke-width="1.2"/>
+              <circle class="p4" cx="8" cy="85" r="3.5" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.2"/>
+              <circle class="p5" cx="8" cy="105" r="3.5" fill="#0f172a" stroke="#06b6d4" stroke-width="1.2"/>
+              <circle class="p6" cx="132" cy="25" r="3.5" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.2"/>
+              <circle class="p7" cx="132" cy="55" r="3.5" fill="#0f172a" stroke="#06b6d4" stroke-width="1.2"/>
+              <circle class="p8" cx="132" cy="70" r="3.5" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.2"/>
+              <circle class="p9" cx="132" cy="105" r="3.5" fill="#0f172a" stroke="#06b6d4" stroke-width="1.2"/>
+              <line class="h1" x1="33" y1="35" x2="56" y2="58" stroke="#06b6d4"/>
+              <line class="h2" x1="33" y1="70" x2="56" y2="68" stroke="#8b5cf6"/>
+              <line class="h3" x1="33" y1="105" x2="56" y2="78" stroke="#06b6d4"/>
+              <line class="h4" x1="107" y1="35" x2="84" y2="58" stroke="#8b5cf6"/>
+              <line class="h5" x1="107" y1="70" x2="84" y2="68" stroke="#06b6d4"/>
+              <line class="h6" x1="107" y1="105" x2="84" y2="78" stroke="#8b5cf6"/>
+              <circle class="core-ring" cx="70" cy="68" r="26" fill="#060d1a" stroke="#1e293b" stroke-width="1"/>
+              <circle class="core-ring" cx="70" cy="68" r="20" fill="none" stroke="#06b6d4" stroke-width="0.4" opacity="0.2"/>
+              <text class="ls-glow" x="70" y="78" font-family="Orbitron,monospace" font-size="28" font-weight="700" fill="#06b6d4" text-anchor="middle">LS</text>
+            </svg>
           </div>
         </div>
       </div>

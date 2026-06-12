@@ -150,3 +150,46 @@
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+.hero-syntax {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #334155;
+  margin-bottom: 6px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.1s forwards;
+}
+
+.hero-name-orbitron {
+  font-family: var(--font-orbitron);
+  font-size: clamp(28px, 4vw, 48px);
+  background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+}
+
+.hero-name-violet {
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-bracket {
+  font-family: var(--font-mono);
+  font-size: clamp(28px, 4vw, 48px);
+  color: #8b5cf6;
+  -webkit-text-fill-color: #8b5cf6;
+}
+
+.hero-avatar {
+  background: transparent;
+  border: none;
+}
+
+.hero-avatar::before,
+.hero-avatar::after {
+  display: none;
+}
