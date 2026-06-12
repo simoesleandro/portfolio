@@ -9,7 +9,6 @@
   border: 0.5px solid rgba(0, 240, 180, 0.12);
   background: #0a0e14;
   transition: border-color 0.2s;
-  overflow: hidden;
 }
 
 .proj-item:hover {
@@ -21,6 +20,7 @@
   overflow: hidden;
   background: #060a0e;
   border-bottom: 0.5px solid rgba(0, 240, 180, 0.08);
+  border-radius: 10px 10px 0 0;
 }
 
 .proj-preview img {
