@@ -481,5 +481,42 @@
     </div>
   </footer>
 
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização da imagem">
+  <span class="lightbox-close" id="lightbox-close">ESC · FECHAR</span>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const overlay = document.getElementById('lightbox');
+  const lbImg   = document.getElementById('lightbox-img');
+  const lbClose = document.getElementById('lightbox-close');
+
+  document.querySelectorAll('.proj-preview img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLightbox() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  overlay.addEventListener('click', e => {
+    if (e.target !== lbImg) closeLightbox();
+  });
+
+  lbClose.addEventListener('click', closeLightbox);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
 </body>
 </html>
