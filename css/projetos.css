@@ -1,53 +1,98 @@
-/* =========================================
-   PROJETOS
-========================================= */
+/* PROJETOS */
 .proj-list {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 12px;
 }
 
+/* Card base — com preview */
 .proj-item {
-  display: grid;
-  grid-template-columns: 44px 1fr auto;
-  gap: 20px;
-  align-items: center;
-  padding: 20px 18px;
-  border-radius: 8px;
-  border: 0.5px solid transparent;
-  transition: background 0.2s, border-color 0.2s;
+  border-radius: 10px;
+  border: 0.5px solid rgba(0, 240, 180, 0.12);
+  overflow: hidden;
+  background: #0a0e14;
+  transition: border-color 0.2s;
 }
 
 .proj-item:hover {
-  background: rgba(0, 240, 180, 0.04);
-  border-color: var(--border);
+  border-color: rgba(0, 240, 180, 0.28);
 }
 
-.proj-item.featured {
-  background: rgba(0, 240, 180, 0.04);
-  border-color: var(--border);
+/* Preview mockup area */
+.proj-preview {
+  background: #060a0e;
+  padding: 16px 20px 14px;
+  border-bottom: 0.5px solid rgba(0, 240, 180, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-height: 68px;
+}
+
+.preview-bar {
+  height: 5px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, rgba(0, 240, 180, 0.4), rgba(0, 200, 255, 0.25));
+}
+
+.preview-bar-sm {
+  height: 4px;
+  border-radius: 3px;
+  background: rgba(0, 240, 180, 0.08);
+}
+
+.preview-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.preview-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(0, 240, 180, 0.5);
+  flex-shrink: 0;
+}
+
+.preview-block {
+  height: 16px;
+  border-radius: 3px;
+  background: rgba(0, 200, 255, 0.08);
+  border: 0.5px solid rgba(0, 200, 255, 0.15);
+}
+
+/* Card body */
+.proj-body {
+  padding: 16px 20px;
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  gap: 14px;
+  align-items: start;
 }
 
 .proj-num {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--neon);
   font-weight: 500;
   font-family: var(--font-mono);
-  opacity: 0.6;
+  opacity: 0.5;
+  padding-top: 2px;
 }
 
 .proj-name {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--text);
   font-weight: 500;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   letter-spacing: -0.01em;
 }
 
 .proj-desc {
   font-size: 12px;
   color: var(--muted);
-  line-height: 1.5;
+  line-height: 1.55;
+  margin-bottom: 10px;
 }
 
 .proj-right {
@@ -59,19 +104,21 @@
 
 .proj-chips {
   display: flex;
-  gap: 5px;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: flex-start;
 }
 
 .p-chip {
   font-size: 9px;
-  padding: 3px 8px;
+  padding: 3px 7px;
   border-radius: 3px;
   font-weight: 500;
   font-family: var(--font-mono);
 }
 
-.pc-neon { background: rgba(0, 240, 180, 0.1); color: var(--neon); border: 0.5px solid rgba(0, 240, 180, 0.25); }
-.pc-blue { background: rgba(0, 200, 255, 0.08); color: var(--neon2); border: 0.5px solid rgba(0, 200, 255, 0.2); }
+.pc-neon { background: rgba(0, 240, 180, 0.08); color: var(--neon); border: 0.5px solid rgba(0, 240, 180, 0.22); }
+.pc-blue { background: rgba(0, 200, 255, 0.06); color: var(--neon2); border: 0.5px solid rgba(0, 200, 255, 0.18); }
 
 .proj-link {
   font-size: 10px;
@@ -82,24 +129,144 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  opacity: 0.7;
+  opacity: 0.6;
   transition: opacity 0.2s;
+  white-space: nowrap;
 }
 
-.proj-item:hover .proj-link {
-  opacity: 1;
+.proj-item:hover .proj-link { opacity: 1; }
+
+.proj-link svg { width: 10px; height: 10px; }
+
+/* =====================
+   DESTAQUE — Sentinela RJ
+   Aurora border animada
+===================== */
+.proj-item.destaque {
+  position: relative;
+  border: none;
+  background: #080c12;
 }
 
-.proj-link svg {
-  width: 10px;
-  height: 10px;
+.proj-item.destaque::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 1.5px;
+  background: linear-gradient(
+    135deg,
+    #06b6d4,
+    #8b5cf6,
+    #06b6d4,
+    #a78bfa,
+    #06b6d4
+  );
+  background-size: 300% 300%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: aurora-border 4s ease-in-out infinite;
+  z-index: 0;
 }
 
-.proj-note {
-  font-size: 10px;
-  color: var(--muted);
-  opacity: 0.5;
-  margin-top: 5px;
+@keyframes aurora-border {
+  0%   { background-position: 0% 50%; opacity: 0.7; }
+  50%  { background-position: 100% 50%; opacity: 1; }
+  100% { background-position: 0% 50%; opacity: 0.7; }
+}
+
+.proj-item.destaque > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Badge destaque */
+.proj-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(6, 182, 212, 0.1);
+  border: 0.5px solid rgba(6, 182, 212, 0.3);
+  color: #06b6d4;
   font-family: var(--font-mono);
-  letter-spacing: 0.02em;
+  font-size: 9px;
+  padding: 3px 9px;
+  border-radius: 3px;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.badge-pulse {
+  width: 5px;
+  height: 5px;
+  background: #f59e0b;
+  border-radius: 50%;
+  animation: pulse-amber 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse-amber {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.3; transform: scale(0.6); }
+}
+
+/* Mini stats Sentinela */
+.proj-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 100px;
+}
+
+.proj-stat {
+  background: rgba(6, 182, 212, 0.06);
+  border: 0.5px solid rgba(6, 182, 212, 0.15);
+  border-radius: 4px;
+  padding: 5px 9px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(6, 182, 212, 0.8);
+  text-align: center;
+}
+
+.proj-stat-val {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #06b6d4;
+  line-height: 1.2;
+  margin-bottom: 1px;
+}
+
+.proj-stat.amber {
+  background: rgba(245, 158, 11, 0.06);
+  border-color: rgba(245, 158, 11, 0.18);
+  color: rgba(245, 158, 11, 0.7);
+}
+
+.proj-stat.amber .proj-stat-val { color: #f59e0b; }
+
+/* Destaque body layout diferente */
+.proj-item.destaque .proj-body {
+  grid-template-columns: 30px 1fr;
+  gap: 14px;
+}
+
+.destaque-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.destaque-text { flex: 1; }
+
+/* Responsive */
+@media (max-width: 700px) {
+  .proj-body { grid-template-columns: 30px 1fr; }
+  .proj-right { grid-column: 2; align-items: flex-start; }
+  .proj-chips { justify-content: flex-start; }
+  .destaque-content { flex-direction: column; }
+  .proj-stats { flex-direction: row; min-width: unset; }
 }
