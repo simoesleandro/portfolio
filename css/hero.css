@@ -34,6 +34,7 @@
   background: transparent;
   border: none;
   justify-self: end;
+  align-self: center;
 }
 
 .hero-logo-svg {
@@ -223,30 +224,65 @@
 }
 
 @media (max-width: 700px) {
+  .hero {
+    padding: 48px 0 40px;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     grid-template-areas:
       "intro"
       "avatar"
       "body";
-    gap: 24px;
+    gap: 16px;
+    justify-items: stretch;
+  }
+
+  .hero-intro,
+  .hero-body {
+    width: 100%;
   }
 
   .hero-avatar {
-    width: 120px;
-    height: 120px;
+    width: clamp(100px, 28vw, 120px);
+    height: clamp(100px, 28vw, 120px);
     justify-self: center;
+    align-self: center;
+    margin: 4px 0 8px;
   }
 
   .hero-logo-svg {
-    width: 108px;
-    height: 108px;
+    width: 100%;
+    height: 100%;
   }
 
-  .hero-desc { max-width: none; }
+  .hero-name {
+    font-size: clamp(32px, 9vw, 40px);
+  }
 
-  .hero-actions { width: 100%; }
-  .hero-btn { flex: 1; justify-content: center; min-width: 140px; }
+  .hero-role {
+    margin-bottom: 16px;
+  }
+
+  .hero-desc {
+    max-width: none;
+    margin-bottom: 20px;
+  }
+
+  .hero-tags {
+    margin-bottom: 20px;
+  }
+
+  .hero-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .hero-btn {
+    width: 100%;
+    justify-content: center;
+    min-width: unset;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

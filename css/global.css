@@ -418,7 +418,6 @@ footer {
   header .container { position: relative; }
 
   .hero { padding: 60px 0 50px; }
-  .hero-name { font-size: 40px; }
 
   .sobre-grid { grid-template-columns: 1fr; gap: 32px; }
   .sobre-stats { grid-template-columns: 1fr 1fr; }
