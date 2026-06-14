@@ -32,6 +32,7 @@
 .extra-name {
   font-size: 13px;
   color: var(--muted3);
+  min-width: 0;
 }
 
 .extra-val {
@@ -39,4 +40,6 @@
   color: var(--neon);
   font-weight: 500;
   font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
 }

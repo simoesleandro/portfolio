@@ -10,8 +10,36 @@
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 180px;
-  gap: 40px;
+  grid-template-areas:
+    "intro avatar"
+    "body  avatar";
+  gap: 40px 40px;
+  align-items: start;
+}
+
+.hero-intro { grid-area: intro; min-width: 0; }
+.hero-body  { grid-area: body; min-width: 0; }
+
+.hero-avatar {
+  grid-area: avatar;
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.3s forwards;
+  background: transparent;
+  border: none;
+  justify-self: end;
+}
+
+.hero-logo-svg {
+  display: block;
+  width: 160px;
+  height: 160px;
 }
 
 .hero-eyebrow {
@@ -48,6 +76,7 @@
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0 14px;
+  text-wrap: balance;
 }
 
 .hero-name span {
@@ -70,7 +99,7 @@
   color: var(--muted3);
   line-height: 1.8;
   max-width: 440px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   opacity: 0;
   animation: fadeUp 0.6s ease 0.4s forwards;
 }
@@ -81,6 +110,59 @@
   flex-wrap: wrap;
   opacity: 0;
   animation: fadeUp 0.6s ease 0.5s forwards;
+  margin-bottom: 24px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.55s forwards;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 11px 20px;
+  border-radius: 4px;
+  transition: box-shadow 0.2s, opacity 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.hero-btn svg {
+  width: 10px;
+  height: 10px;
+}
+
+.hero-btn-primary {
+  background: var(--neon);
+  color: var(--bg);
+}
+
+.hero-btn-primary:hover {
+  box-shadow: 0 0 20px rgba(0, 240, 180, 0.35);
+  opacity: 0.92;
+}
+
+.hero-btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 0.5px solid var(--border2);
+}
+
+.hero-btn-secondary:hover {
+  border-color: var(--neon);
+  color: var(--neon);
+}
+
+.hero-btn:active {
+  transform: scale(0.98);
 }
 
 .h-tag {
@@ -96,59 +178,6 @@
 .tag-neon { border-color: rgba(0, 240, 180, 0.4); color: var(--neon); background: rgba(0, 240, 180, 0.06); }
 .tag-blue { border-color: rgba(0, 200, 255, 0.4); color: var(--neon2); background: rgba(0, 200, 255, 0.06); }
 .tag-dim  { border-color: var(--muted2); color: var(--muted); background: transparent; }
-
-.hero-avatar {
-  width: 180px;
-  height: 180px;
-  border-radius: 12px;
-  background: var(--bg3);
-  border: 0.5px solid var(--border2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 6px;
-  position: relative;
-  opacity: 0;
-  animation: fadeUp 0.6s ease 0.3s forwards;
-}
-
-.hero-avatar::before,
-.hero-avatar::after {
-  content: '';
-  position: absolute;
-  width: 16px;
-  height: 16px;
-}
-
-.hero-avatar::before {
-  top: -1px; left: -1px;
-  border-top: 2px solid var(--neon);
-  border-left: 2px solid var(--neon);
-  border-radius: 3px 0 0 0;
-}
-
-.hero-avatar::after {
-  bottom: -1px; right: -1px;
-  border-bottom: 2px solid var(--neon);
-  border-right: 2px solid var(--neon);
-  border-radius: 0 0 3px 0;
-}
-
-.avatar-initials {
-  font-size: 40px;
-  font-weight: 600;
-  color: var(--neon);
-  letter-spacing: -0.02em;
-  text-shadow: 0 0 30px rgba(0, 240, 180, 0.5);
-}
-
-.avatar-sub {
-  font-size: 10px;
-  color: var(--muted);
-  letter-spacing: 0.1em;
-  font-family: var(--font-mono);
-}
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
@@ -188,12 +217,41 @@
   -webkit-text-fill-color: #8b5cf6;
 }
 
-.hero-avatar {
-  background: transparent;
-  border: none;
-}
-
 .hero-avatar::before,
 .hero-avatar::after {
   display: none;
+}
+
+@media (max-width: 700px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "avatar"
+      "body";
+    gap: 24px;
+  }
+
+  .hero-avatar {
+    width: 120px;
+    height: 120px;
+    justify-self: center;
+  }
+
+  .hero-logo-svg {
+    width: 108px;
+    height: 108px;
+  }
+
+  .hero-desc { max-width: none; }
+
+  .hero-actions { width: 100%; }
+  .hero-btn { flex: 1; justify-content: center; min-width: 140px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo-svg [class] {
+    animation: none !important;
+    opacity: 0.7;
+  }
 }

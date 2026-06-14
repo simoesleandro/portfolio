@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080c10">
   <meta name="description" content="Portfólio de Leandro Simões — desenvolvedor Python, IA e automação em transição de carreira para tecnologia. Estudante de ADS na FIAP.">
   <title>Leandro Simões — Python · IA · Automação</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,14 +14,21 @@
 
 <body>
 
+  <a href="#main" class="skip-link">Ir para o conteúdo</a>
+
   <header>
     <div class="container">
       <nav class="nav" aria-label="Navegação principal">
-        <div class="nav-logo">
+        <a href="/" class="nav-logo" aria-label="Leandro Simões — início">
           <div class="nav-dot" aria-hidden="true"></div>
           Leandro <span>Simões</span>
-        </div>
-        <ul class="nav-links">
+        </a>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu de navegação">
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#projetos">Projetos</a></li>
           <li><a href="#formacao">Formação</a></li>
@@ -33,12 +41,12 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
-          <div>
+          <div class="hero-intro">
             <div class="hero-eyebrow">
               <div class="eyebrow-line" aria-hidden="true"></div>
               Disponível para oportunidades
@@ -47,53 +55,25 @@
             <h1 class="hero-name">
               Leandro <span class="hero-name-orbitron">SIMÕES</span> <span class="hero-name-violet">Dev</span><span class="hero-bracket">}</span>
             </h1>
-            <p class="hero-role">fullstack · ia aplicada · civic tech</p>
-            <p class="hero-desc">
-              Ex-empreendedor com 17 anos em gestão de projetos em transição de carreira para a área de tecnologia. Constrói ecossistemas reais com Python, APIs de IA e automação — antes mesmo de entrar na faculdade.
-            </p>
-            <div class="hero-tags">
-              <span class="h-tag tag-neon">Python</span>
-              <span class="h-tag tag-neon">IA · LLM</span>
-              <span class="h-tag tag-blue">Flask · Streamlit</span>
-              <span class="h-tag tag-blue">Telegram Bot</span>
-              <span class="h-tag tag-dim">ADS · FIAP · 2026</span>
-              <span class="h-tag tag-dim">Rio de Janeiro</span>
-            </div>
           </div>
-          <div class="hero-avatar" aria-label="Logo neural animado Leandro Simões">
-            <svg width="160" height="160" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <div class="hero-avatar" aria-hidden="true">
+            <svg class="hero-logo-svg" width="160" height="160" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <filter id="fp" x="-200%" y="-200%" width="500%" height="500%">
-                  <feGaussianBlur stdDeviation="3" result="b1"/>
-                  <feGaussianBlur stdDeviation="1" result="b2"/>
-                  <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <filter id="fls" x="-60%" y="-60%" width="220%" height="220%">
-                  <feGaussianBlur stdDeviation="5" result="b1"/>
-                  <feGaussianBlur stdDeviation="2" result="b2"/>
-                  <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <filter id="fcore" x="-80%" y="-80%" width="260%" height="260%">
-                  <feGaussianBlur stdDeviation="4" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
                 <style>
-                  .s1{animation:sc 4.2s ease-in-out infinite 0.0s}.s2{animation:sv 3.8s ease-in-out infinite 0.9s}.s3{animation:sc 5.1s ease-in-out infinite 1.7s}.s4{animation:sv 4.6s ease-in-out infinite 0.4s}.s5{animation:sc 3.5s ease-in-out infinite 2.1s}.s6{animation:sv 4.9s ease-in-out infinite 1.2s}.s7{animation:sc 3.9s ease-in-out infinite 0.6s}.s8{animation:sv 5.3s ease-in-out infinite 1.8s}.s9{animation:sc 4.5s ease-in-out infinite 0.3s}
-                  .h1{animation:hc 4.2s ease-in-out infinite 0.3s}.h2{animation:hv 3.8s ease-in-out infinite 1.2s}.h3{animation:hc 5.1s ease-in-out infinite 2.0s}.h4{animation:hv 4.6s ease-in-out infinite 0.7s}.h5{animation:hc 3.5s ease-in-out infinite 2.4s}.h6{animation:hv 4.9s ease-in-out infinite 1.5s}
-                  .p1{animation:pc 4.2s ease-in-out infinite 0.0s}.p2{animation:pv 3.8s ease-in-out infinite 0.9s}.p3{animation:pc 5.1s ease-in-out infinite 1.7s}.p4{animation:pv 4.6s ease-in-out infinite 0.4s}.p5{animation:pc 3.5s ease-in-out infinite 2.1s}.p6{animation:pv 4.9s ease-in-out infinite 1.2s}.p7{animation:pc 3.9s ease-in-out infinite 0.6s}.p8{animation:pv 5.3s ease-in-out infinite 1.8s}.p9{animation:pc 4.5s ease-in-out infinite 0.3s}
-                  .n1{animation:nc 4.2s ease-in-out infinite 0.2s}.n2{animation:nv 3.8s ease-in-out infinite 1.0s}.n3{animation:nc 5.1s ease-in-out infinite 1.8s}.n4{animation:nv 4.6s ease-in-out infinite 0.5s}.n5{animation:nc 3.5s ease-in-out infinite 2.2s}.n6{animation:nv 4.9s ease-in-out infinite 1.3s}
-                  .ls-glow{animation:ls-sync 2.8s ease-in-out infinite 0.4s}
-                  .core-ring{animation:core-ring 2.8s ease-in-out infinite}
-                  @keyframes sc{0%,100%{stroke:#06b6d4;stroke-opacity:.1;stroke-width:.8;filter:none}10%{stroke:#22d3ee;stroke-opacity:1;stroke-width:2.2;filter:url(#fp)}28%{stroke:#06b6d4;stroke-opacity:.1;stroke-width:.8;filter:none}}
-                  @keyframes sv{0%,100%{stroke:#8b5cf6;stroke-opacity:.1;stroke-width:.8;filter:none}10%{stroke:#c4b5fd;stroke-opacity:1;stroke-width:2.2;filter:url(#fp)}28%{stroke:#8b5cf6;stroke-opacity:.1;stroke-width:.8;filter:none}}
-                  @keyframes hc{0%,100%{stroke:#06b6d4;stroke-opacity:.12;stroke-width:.6;filter:none}12%{stroke:#22d3ee;stroke-opacity:.8;stroke-width:1.8;filter:url(#fp)}30%{stroke:#06b6d4;stroke-opacity:.12;stroke-width:.6;filter:none}}
-                  @keyframes hv{0%,100%{stroke:#8b5cf6;stroke-opacity:.12;stroke-width:.6;filter:none}12%{stroke:#c4b5fd;stroke-opacity:.8;stroke-width:1.8;filter:url(#fp)}30%{stroke:#8b5cf6;stroke-opacity:.12;stroke-width:.6;filter:none}}
-                  @keyframes pc{0%,100%{stroke:#06b6d4;fill:#0f172a;r:3.5;filter:none}10%{stroke:#22d3ee;fill:#0d2535;r:4.5;filter:url(#fp)}28%{stroke:#06b6d4;fill:#0f172a;r:3.5;filter:none}}
-                  @keyframes pv{0%,100%{stroke:#8b5cf6;fill:#0f172a;r:3.5;filter:none}10%{stroke:#c4b5fd;fill:#150d30;r:4.5;filter:url(#fp)}28%{stroke:#8b5cf6;fill:#0f172a;r:3.5;filter:none}}
-                  @keyframes nc{0%,100%{stroke:#06b6d4;stroke-opacity:.4;fill:#060d1a;r:5}12%{stroke:#22d3ee;stroke-opacity:1;fill:#0a2535;r:6.5;filter:url(#fcore)}30%{stroke:#06b6d4;stroke-opacity:.4;fill:#060d1a;r:5}}
-                  @keyframes nv{0%,100%{stroke:#8b5cf6;stroke-opacity:.4;fill:#060d1a;r:5}12%{stroke:#c4b5fd;stroke-opacity:1;fill:#12082e;r:6.5;filter:url(#fcore)}30%{stroke:#8b5cf6;stroke-opacity:.4;fill:#060d1a;r:5}}
-                  @keyframes ls-sync{0%{fill:#06b6d4;opacity:.55;filter:none}20%{fill:#22d3ee;opacity:1;filter:url(#fls)}40%{fill:#a78bfa;opacity:.9;filter:url(#fls)}60%{fill:#06b6d4;opacity:.7;filter:url(#fls)}80%{fill:#22d3ee;opacity:1;filter:url(#fls)}100%{fill:#06b6d4;opacity:.55;filter:none}}
-                  @keyframes core-ring{0%,100%{stroke:#1e293b;stroke-opacity:.6}35%{stroke:#06b6d4;stroke-opacity:.5;filter:url(#fcore)}65%{stroke:#8b5cf6;stroke-opacity:.4}}
+                  .s1{animation:line-pulse 4.2s ease-in-out infinite 0.0s}.s2{animation:line-pulse-v 3.8s ease-in-out infinite 0.9s}.s3{animation:line-pulse 5.1s ease-in-out infinite 1.7s}.s4{animation:line-pulse-v 4.6s ease-in-out infinite 0.4s}.s5{animation:line-pulse 3.5s ease-in-out infinite 2.1s}.s6{animation:line-pulse-v 4.9s ease-in-out infinite 1.2s}.s7{animation:line-pulse 3.9s ease-in-out infinite 0.6s}.s8{animation:line-pulse-v 5.3s ease-in-out infinite 1.8s}.s9{animation:line-pulse 4.5s ease-in-out infinite 0.3s}
+                  .h1{animation:line-pulse 4.2s ease-in-out infinite 0.3s}.h2{animation:line-pulse-v 3.8s ease-in-out infinite 1.2s}.h3{animation:line-pulse 5.1s ease-in-out infinite 2.0s}.h4{animation:line-pulse-v 4.6s ease-in-out infinite 0.7s}.h5{animation:line-pulse 3.5s ease-in-out infinite 2.4s}.h6{animation:line-pulse-v 4.9s ease-in-out infinite 1.5s}
+                  .p1{animation:node-pulse 4.2s ease-in-out infinite 0.0s}.p2{animation:node-pulse-v 3.8s ease-in-out infinite 0.9s}.p3{animation:node-pulse 5.1s ease-in-out infinite 1.7s}.p4{animation:node-pulse-v 4.6s ease-in-out infinite 0.4s}.p5{animation:node-pulse 3.5s ease-in-out infinite 2.1s}.p6{animation:node-pulse-v 4.9s ease-in-out infinite 1.2s}.p7{animation:node-pulse 3.9s ease-in-out infinite 0.6s}.p8{animation:node-pulse-v 5.3s ease-in-out infinite 1.8s}.p9{animation:node-pulse 4.5s ease-in-out infinite 0.3s}
+                  .n1{animation:hub-pulse 4.2s ease-in-out infinite 0.2s}.n2{animation:hub-pulse-v 3.8s ease-in-out infinite 1.0s}.n3{animation:hub-pulse 5.1s ease-in-out infinite 1.8s}.n4{animation:hub-pulse-v 4.6s ease-in-out infinite 0.5s}.n5{animation:hub-pulse 3.5s ease-in-out infinite 2.2s}.n6{animation:hub-pulse-v 4.9s ease-in-out infinite 1.3s}
+                  .ls-glow{animation:logo-pulse 2.8s ease-in-out infinite 0.4s}
+                  .core-ring{animation:ring-pulse 2.8s ease-in-out infinite}
+                  @keyframes line-pulse{0%,100%{opacity:.15}50%{opacity:1}}
+                  @keyframes line-pulse-v{0%,100%{opacity:.12}50%{opacity:.85}}
+                  @keyframes node-pulse{0%,100%{opacity:.25}50%{opacity:1}}
+                  @keyframes node-pulse-v{0%,100%{opacity:.2}50%{opacity:.9}}
+                  @keyframes hub-pulse{0%,100%{opacity:.35}50%{opacity:1}}
+                  @keyframes hub-pulse-v{0%,100%{opacity:.3}50%{opacity:.95}}
+                  @keyframes logo-pulse{0%,100%{opacity:.55}50%{opacity:1}}
+                  @keyframes ring-pulse{0%,100%{opacity:.25}50%{opacity:.7}}
                 </style>
               </defs>
               <circle class="n1" cx="28" cy="35" r="5" fill="#060d1a" stroke="#06b6d4" stroke-width="1" stroke-opacity=".4"/>
@@ -130,6 +110,27 @@
               <circle class="core-ring" cx="70" cy="68" r="20" fill="none" stroke="#06b6d4" stroke-width="0.4" opacity="0.2"/>
               <text class="ls-glow" x="70" y="78" font-family="Orbitron,monospace" font-size="28" font-weight="700" fill="#06b6d4" text-anchor="middle">LS</text>
             </svg>
+          </div>
+          <div class="hero-body">
+            <p class="hero-role">fullstack · ia aplicada · civic tech</p>
+            <p class="hero-desc">
+              Ex-empreendedor com 17 anos em gestão de projetos em transição de carreira para a área de tecnologia. Constrói ecossistemas reais com Python, APIs de IA e automação — antes mesmo de entrar na faculdade.
+            </p>
+            <div class="hero-tags">
+              <span class="h-tag tag-neon" translate="no">Python</span>
+              <span class="h-tag tag-neon">IA · LLM</span>
+              <span class="h-tag tag-blue" translate="no">Flask · Streamlit</span>
+              <span class="h-tag tag-blue">Telegram Bot</span>
+              <span class="h-tag tag-dim" translate="no">ADS · FIAP · 2026</span>
+              <span class="h-tag tag-dim">Rio de Janeiro</span>
+            </div>
+            <div class="hero-actions">
+              <a href="#projetos" class="hero-btn hero-btn-primary">Ver projetos</a>
+              <a href="https://github.com/simoesleandro" class="hero-btn hero-btn-secondary" target="_blank" rel="noopener" aria-label="Ver GitHub de Leandro Simões">
+                GitHub
+                <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 9L9 1M9 1H3M9 1V7"></path></svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -183,18 +184,20 @@
 
           <article class="proj-item">
             <div class="proj-preview">
-              <img src="assets/preview/syshealth.png" alt="Preview SYS.HEALTH" loading="lazy">
+              <button type="button" class="proj-preview-btn" aria-label="Ampliar preview do SYS.HEALTH">
+                <img src="assets/preview/syshealth.png" alt="" width="1238" height="813" loading="lazy">
+              </button>
             </div>
             <div class="proj-body">
               <div class="proj-num" aria-hidden="true">01</div>
               <div>
-                <h3 class="proj-name">SYS.HEALTH</h3>
-                <p class="proj-desc">Ecossistema de saúde e performance — dashboard Streamlit, bot Telegram com Gemini Vision, sync Amazfit Bip 6 via Zepp API e banco Supabase PostgreSQL em produção.</p>
+                <h3 class="proj-name" translate="no">SYS.HEALTH</h3>
+                <p class="proj-desc">Ecossistema de saúde e performance — dashboard <span translate="no">Streamlit</span>, bot Telegram com <span translate="no">Gemini Vision</span>, sync <span translate="no">Amazfit Bip 6</span> via <span translate="no">Zepp API</span> e banco <span translate="no">Supabase PostgreSQL</span> em produção.</p>
                 <div class="proj-chips">
-                  <span class="p-chip pc-neon">Python</span>
-                  <span class="p-chip pc-neon">Streamlit</span>
-                  <span class="p-chip pc-blue">Gemini Vision</span>
-                  <span class="p-chip pc-blue">Fly.io</span>
+                  <span class="p-chip pc-neon" translate="no">Python</span>
+                  <span class="p-chip pc-neon" translate="no">Streamlit</span>
+                  <span class="p-chip pc-blue" translate="no">Gemini Vision</span>
+                  <span class="p-chip pc-blue" translate="no">Fly.io</span>
                 </div>
               </div>
               <div class="proj-right">
@@ -208,18 +211,20 @@
 
           <article class="proj-item">
             <div class="proj-preview">
-              <img src="assets/preview/vigilante.png" alt="Preview Vigilante Master" loading="lazy">
+              <button type="button" class="proj-preview-btn" aria-label="Ampliar preview do Vigilante Master">
+                <img src="assets/preview/vigilante.png" alt="" width="1291" height="900" loading="lazy">
+              </button>
             </div>
             <div class="proj-body">
               <div class="proj-num" aria-hidden="true">02</div>
               <div>
-                <h3 class="proj-name">Vigilante Master</h3>
-                <p class="proj-desc">Monitor autônomo de processos judiciais (TJRJ, STF, TSE) com scraping multi-tribunal, resumos evolutivos via Gemini IA e alertas em tempo real no Telegram.</p>
+                <h3 class="proj-name" translate="no">Vigilante Master</h3>
+                <p class="proj-desc">Monitor autônomo de processos judiciais (<span translate="no">TJRJ, STF, TSE</span>) com scraping multi-tribunal, resumos evolutivos via <span translate="no">Gemini IA</span> e alertas em tempo real no Telegram.</p>
                 <div class="proj-chips">
-                  <span class="p-chip pc-neon">Python</span>
-                  <span class="p-chip pc-neon">Playwright</span>
-                  <span class="p-chip pc-blue">Selenium</span>
-                  <span class="p-chip pc-blue">SQLite</span>
+                  <span class="p-chip pc-neon" translate="no">Python</span>
+                  <span class="p-chip pc-neon" translate="no">Playwright</span>
+                  <span class="p-chip pc-blue" translate="no">Selenium</span>
+                  <span class="p-chip pc-blue" translate="no">SQLite</span>
                 </div>
               </div>
               <div class="proj-right">
@@ -233,18 +238,20 @@
 
           <article class="proj-item">
             <div class="proj-preview">
-              <img src="assets/preview/theoos.png" alt="Preview ThéoOS" loading="lazy">
+              <button type="button" class="proj-preview-btn" aria-label="Ampliar preview do ThéoOS">
+                <img src="assets/preview/theoos.png" alt="" width="1276" height="825" loading="lazy">
+              </button>
             </div>
             <div class="proj-body">
               <div class="proj-num" aria-hidden="true">03</div>
               <div>
-                <h3 class="proj-name">ThéoOS</h3>
+                <h3 class="proj-name" translate="no">ThéoOS</h3>
                 <p class="proj-desc">Sistema operacional doméstico — lista de compras inteligente, leitura de cupom fiscal com IA, controle financeiro familiar, detetive de preços e alertas via Telegram. Roda como serviço Windows 24/7.</p>
                 <div class="proj-chips">
-                  <span class="p-chip pc-neon">Python</span>
-                  <span class="p-chip pc-neon">Flask</span>
-                  <span class="p-chip pc-blue">Gemini Vision</span>
-                  <span class="p-chip pc-blue">SQLite</span>
+                  <span class="p-chip pc-neon" translate="no">Python</span>
+                  <span class="p-chip pc-neon" translate="no">Flask</span>
+                  <span class="p-chip pc-blue" translate="no">Gemini Vision</span>
+                  <span class="p-chip pc-blue" translate="no">SQLite</span>
                 </div>
               </div>
               <div class="proj-right">
@@ -258,18 +265,20 @@
 
           <article class="proj-item">
             <div class="proj-preview">
-              <img src="assets/preview/faperj.png" alt="Preview Agente FAPERJ" loading="lazy">
+              <button type="button" class="proj-preview-btn" aria-label="Ampliar preview do Agente FAPERJ">
+                <img src="assets/preview/faperj.png" alt="" width="1248" height="897" loading="lazy">
+              </button>
             </div>
             <div class="proj-body">
               <div class="proj-num" aria-hidden="true">04</div>
               <div>
-                <h3 class="proj-name">Agente de Pesquisa FAPERJ</h3>
-                <p class="proj-desc">Web scraper inteligente para identificar editais da FAPERJ com correlação à FAETEC — Selenium, extração de PDFs e geração de relatório profissional. Desenvolvido para apoiar gestão pública na SECTI-RJ.</p>
+                <h3 class="proj-name" translate="no">Agente de Pesquisa FAPERJ</h3>
+                <p class="proj-desc">Web scraper inteligente para identificar editais da <span translate="no">FAPERJ</span> com correlação à <span translate="no">FAETEC</span> — <span translate="no">Selenium</span>, extração de PDFs e geração de relatório profissional. Desenvolvido para apoiar gestão pública na <span translate="no">SECTI-RJ</span>.</p>
                 <div class="proj-chips">
-                  <span class="p-chip pc-neon">Python</span>
-                  <span class="p-chip pc-neon">Selenium</span>
-                  <span class="p-chip pc-blue">BeautifulSoup</span>
-                  <span class="p-chip pc-blue">PyPDF2</span>
+                  <span class="p-chip pc-neon" translate="no">Python</span>
+                  <span class="p-chip pc-neon" translate="no">Selenium</span>
+                  <span class="p-chip pc-blue" translate="no">BeautifulSoup</span>
+                  <span class="p-chip pc-blue" translate="no">PyPDF2</span>
                 </div>
               </div>
               <div class="proj-right">
@@ -283,59 +292,61 @@
 
           <article class="proj-item destaque">
             <div class="proj-preview">
-              <img src="assets/preview/sentinela.png" alt="Preview Sentinela RJ" loading="lazy">
+              <button type="button" class="proj-preview-btn" aria-label="Ampliar preview do Sentinela RJ">
+                <img src="assets/preview/sentinela.png" alt="" width="1198" height="813" loading="lazy">
+              </button>
             </div>
             <div class="proj-body">
               <div class="proj-num" aria-hidden="true">05</div>
-              <div class="destaque-content">
-                <div class="destaque-text">
-                  <div class="proj-badge"><span class="badge-pulse"></span> RELATÓRIO #01 · PUBLICADO</div>
-                  <h3 class="proj-name">Sentinela RJ</h3>
-                  <p class="proj-desc">4.925 contratos coletados da API PNCP (R$ 11,28 bilhões), 1.497 anomalias detectadas.</p>
-                  <div class="proj-chips" style="margin-top:10px">
-                    <span class="p-chip pc-neon">Python</span>
-                    <span class="p-chip pc-neon">SQLite</span>
-                    <span class="p-chip pc-blue">PNCP API</span>
-                    <span class="p-chip pc-blue">Análise Estatística</span>
-                  </div>
+              <div class="destaque-text">
+                <div class="proj-badge"><span class="badge-pulse"></span> RELATÓRIO #01 · PUBLICADO</div>
+                <h3 class="proj-name" translate="no">Sentinela RJ</h3>
+                <p class="proj-desc">4.925 contratos coletados da API <span translate="no">PNCP</span> (R$ 11,28 bilhões), 1.497 anomalias detectadas.</p>
+                <div class="proj-chips" style="margin-top:10px">
+                  <span class="p-chip pc-neon" translate="no">Python</span>
+                  <span class="p-chip pc-neon" translate="no">SQLite</span>
+                  <span class="p-chip pc-blue" translate="no">PNCP API</span>
+                  <span class="p-chip pc-blue" translate="no">Análise Estatística</span>
                 </div>
-                <div>
-                  <div class="proj-stats">
-                    <div class="proj-stat"><span class="proj-stat-val">4.925</span>contratos</div>
-                    <div class="proj-stat"><span class="proj-stat-val">R$11,28bi</span>analisado</div>
-                    <div class="proj-stat amber"><span class="proj-stat-val">1.497</span>anomalias</div>
-                  </div>
-                  <a class="proj-link" style="margin-top:10px;justify-content:flex-end" href="https://github.com/simoesleandro/sentinela-rj" target="_blank" rel="noopener" aria-label="Ver repositório do Sentinela RJ">
-                    Ver repositório
-                    <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 9L9 1M9 1H3M9 1V7"></path></svg>
-                  </a>
-                  <a class="proj-link" href="https://sentinela-rj.fly.dev/dashboard" target="_blank" rel="noopener">
-                    Demo ao vivo
-                    <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                      <path d="M1 9L9 1M9 1H3M9 1V7"></path>
-                    </svg>
-                  </a>
+              </div>
+              <div class="proj-right">
+                <div class="proj-stats">
+                  <div class="proj-stat"><span class="proj-stat-val">4.925</span>contratos</div>
+                  <div class="proj-stat"><span class="proj-stat-val">R$11,28bi</span>analisado</div>
+                  <div class="proj-stat amber"><span class="proj-stat-val">1.497</span>anomalias</div>
                 </div>
+                <a class="proj-link" href="https://github.com/simoesleandro/sentinela-rj" target="_blank" rel="noopener" aria-label="Ver repositório do Sentinela RJ">
+                  Ver repositório
+                  <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 9L9 1M9 1H3M9 1V7"></path></svg>
+                </a>
+                <a class="proj-link" href="https://sentinela-rj.fly.dev/dashboard" target="_blank" rel="noopener" aria-label="Ver demo ao vivo do Sentinela RJ">
+                  Demo ao vivo
+                  <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <path d="M1 9L9 1M9 1H3M9 1V7"></path>
+                  </svg>
+                </a>
               </div>
             </div>
           </article>
 
           <article class="proj-item">
             <div class="proj-preview">
-              <img src="assets/preview/hermes-lite.png" alt="Preview Hermes Lite" loading="lazy">
+              <button type="button" class="proj-preview-btn" aria-label="Ampliar preview do Hermes Lite">
+                <img src="assets/preview/hermes-lite.png" alt="" width="1276" height="718" loading="lazy">
+              </button>
             </div>
             <div class="proj-body">
               <div class="proj-num" aria-hidden="true">06</div>
               <div>
-                <h3 class="proj-name">Hermes Lite</h3>
-                <p class="proj-desc">Plataforma multi-agente local com 12 agentes especializados (Saúde, Dev, Jurídico, Analista, Sentinela, Radar e mais). Model router automático Gemma4→Groq→Gemini com fallback em cadeia. MCP server com 30+ ferramentas, RAG, GTD, Telegram bidirecional e workflows duráveis.</p>
+                <h3 class="proj-name" translate="no">Hermes Lite</h3>
+                <p class="proj-desc">Plataforma multi-agente local com 12 agentes especializados (Saúde, Dev, Jurídico, Analista, Sentinela, Radar e mais). Model router automático <span translate="no">Gemma4→Groq→Gemini</span> com fallback em cadeia. <span translate="no">MCP</span> server com 30+ ferramentas, <span translate="no">RAG</span>, <span translate="no">GTD</span>, Telegram bidirecional e workflows duráveis.</p>
                 <div class="proj-chips">
-                  <span class="p-chip pc-neon">Python</span>
-                  <span class="p-chip pc-neon">Flask</span>
-                  <span class="p-chip pc-blue">Groq</span>
-                  <span class="p-chip pc-blue">Gemini</span>
-                  <span class="p-chip pc-blue">Ollama</span>
-                  <span class="p-chip pc-blue">SQLite</span>
+                  <span class="p-chip pc-neon" translate="no">Python</span>
+                  <span class="p-chip pc-neon" translate="no">Flask</span>
+                  <span class="p-chip pc-blue" translate="no">Groq</span>
+                  <span class="p-chip pc-blue" translate="no">Gemini</span>
+                  <span class="p-chip pc-blue" translate="no">Ollama</span>
+                  <span class="p-chip pc-blue" translate="no">SQLite</span>
                 </div>
               </div>
               <div class="proj-right">
@@ -349,19 +360,21 @@
 
           <article class="proj-item">
             <div class="proj-preview">
-              <img src="assets/preview/hermescommand.png" alt="Preview HermesCommand" loading="lazy">
+              <button type="button" class="proj-preview-btn" aria-label="Ampliar preview do HermesCommand">
+                <img src="assets/preview/hermescommand.png" alt="" width="1276" height="718" loading="lazy">
+              </button>
             </div>
             <div class="proj-body">
               <div class="proj-num" aria-hidden="true">07</div>
               <div>
-                <h3 class="proj-name">HermesCommand</h3>
-                <p class="proj-desc">Painel de comando e monitoramento de infraestrutura local. Rota /sistema com métricas em tempo real (CPU, RAM, disco, status Ollama/Gemini via psutil). Navbar com atalhos Ctrl+1-4 para Chat, Sistema, Operações e Agendador.</p>
+                <h3 class="proj-name" translate="no">HermesCommand</h3>
+                <p class="proj-desc">Painel de comando e monitoramento de infraestrutura local. Rota <span translate="no">/sistema</span> com métricas em tempo real (CPU, RAM, disco, status <span translate="no">Ollama/Gemini</span> via <span translate="no">psutil</span>). Navbar com atalhos <span translate="no">Ctrl+1-4</span> para Chat, Sistema, Operações e Agendador.</p>
                 <div class="proj-chips">
-                  <span class="p-chip pc-neon">Python</span>
-                  <span class="p-chip pc-neon">Flask</span>
-                  <span class="p-chip pc-blue">psutil</span>
-                  <span class="p-chip pc-blue">WinSW</span>
-                  <span class="p-chip pc-blue">vanilla JS</span>
+                  <span class="p-chip pc-neon" translate="no">Python</span>
+                  <span class="p-chip pc-neon" translate="no">Flask</span>
+                  <span class="p-chip pc-blue" translate="no">psutil</span>
+                  <span class="p-chip pc-blue" translate="no">WinSW</span>
+                  <span class="p-chip pc-blue" translate="no">vanilla JS</span>
                 </div>
               </div>
               <div class="proj-right">
@@ -375,20 +388,22 @@
 
           <article class="proj-item">
             <div class="proj-preview">
-              <img src="assets/preview/sys-health.png" alt="Preview sys-health" loading="lazy">
+              <button type="button" class="proj-preview-btn" aria-label="Ampliar preview do sys-health">
+                <img src="assets/preview/sys-health.png" alt="" width="1239" height="813" loading="lazy">
+              </button>
             </div>
             <div class="proj-body">
               <div class="proj-num" aria-hidden="true">08</div>
               <div>
-                <h3 class="proj-name">sys-health</h3>
-                <p class="proj-desc">Plataforma fullstack de saúde e performance pessoal. Dashboard com dados biométricos, treinos (sync Hevy), sono e IA Coach. PWA com suporte offline. Stack moderna: Next.js 16, React 19, TypeScript, Tailwind 4, Supabase PostgreSQL e Gemini API.</p>
+                <h3 class="proj-name" translate="no">sys-health</h3>
+                <p class="proj-desc">Plataforma fullstack de saúde e performance pessoal. Dashboard com dados biométricos, treinos (sync <span translate="no">Hevy</span>), sono e IA Coach. <span translate="no">PWA</span> com suporte offline. Stack moderna: <span translate="no">Next.js 16, React 19, TypeScript, Tailwind 4, Supabase PostgreSQL</span> e <span translate="no">Gemini API</span>.</p>
                 <div class="proj-chips">
-                  <span class="p-chip pc-neon">Next.js</span>
-                  <span class="p-chip pc-neon">React 19</span>
-                  <span class="p-chip pc-blue">TypeScript</span>
-                  <span class="p-chip pc-blue">Tailwind 4</span>
-                  <span class="p-chip pc-blue">Supabase</span>
-                  <span class="p-chip pc-blue">Gemini</span>
+                  <span class="p-chip pc-neon" translate="no">Next.js</span>
+                  <span class="p-chip pc-neon" translate="no">React 19</span>
+                  <span class="p-chip pc-blue" translate="no">TypeScript</span>
+                  <span class="p-chip pc-blue" translate="no">Tailwind 4</span>
+                  <span class="p-chip pc-blue" translate="no">Supabase</span>
+                  <span class="p-chip pc-blue" translate="no">Gemini</span>
                 </div>
               </div>
               <div class="proj-right">
@@ -536,8 +551,8 @@
                 </svg>
               </a>
               <a href="https://wa.me/5521967786655" target="_blank" rel="noopener" class="c-icon" aria-label="WhatsApp">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
                 </svg>
               </a>
             </div>
@@ -560,29 +575,60 @@
 
 
 <!-- LIGHTBOX -->
-<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização da imagem">
-  <span class="lightbox-close" id="lightbox-close">ESC · FECHAR</span>
+<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização ampliada do projeto" hidden>
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Fechar visualização">ESC · FECHAR</button>
   <img class="lightbox-img" id="lightbox-img" src="" alt="">
 </div>
 
 <script>
-  const overlay = document.getElementById('lightbox');
-  const lbImg   = document.getElementById('lightbox-img');
-  const lbClose = document.getElementById('lightbox-close');
+  const overlay   = document.getElementById('lightbox');
+  const lbImg     = document.getElementById('lightbox-img');
+  const lbClose   = document.getElementById('lightbox-close');
+  const mainEl    = document.getElementById('main');
+  const headerEl  = document.querySelector('header');
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu   = document.getElementById('nav-menu');
+  let lastFocused = null;
 
-  document.querySelectorAll('.proj-preview img').forEach(img => {
-    img.addEventListener('click', () => {
-      lbImg.src = img.src;
-      lbImg.alt = img.alt;
-      overlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  });
+  const FOCUSABLE = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+  function getFocusable(container) {
+    return [...container.querySelectorAll(FOCUSABLE)]
+      .filter(el => !el.disabled && el.getAttribute('aria-hidden') !== 'true');
+  }
+
+  function openLightbox(trigger, src, alt) {
+    lastFocused = trigger;
+    lbImg.src = src;
+    lbImg.alt = alt;
+    overlay.hidden = false;
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (mainEl) mainEl.inert = true;
+    if (headerEl) headerEl.inert = true;
+    lbClose.focus();
+  }
 
   function closeLightbox() {
     overlay.classList.remove('active');
+    overlay.hidden = true;
     document.body.style.overflow = '';
+    lbImg.src = '';
+    lbImg.alt = '';
+    if (mainEl) mainEl.inert = false;
+    if (headerEl) headerEl.inert = false;
+    if (lastFocused) {
+      lastFocused.focus();
+      lastFocused = null;
+    }
   }
+
+  document.querySelectorAll('.proj-preview-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const img = btn.querySelector('img');
+      openLightbox(btn, img.currentSrc || img.src, btn.getAttribute('aria-label'));
+    });
+  });
 
   overlay.addEventListener('click', e => {
     if (e.target !== lbImg) closeLightbox();
@@ -590,9 +636,55 @@
 
   lbClose.addEventListener('click', closeLightbox);
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeLightbox();
+  overlay.addEventListener('keydown', e => {
+    if (e.key !== 'Tab' || !overlay.classList.contains('active')) return;
+    const focusable = getFocusable(overlay);
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      if (overlay.classList.contains('active')) closeLightbox();
+      if (navMenu && navToggle && navToggle.getAttribute('aria-expanded') === 'true') closeNav();
+    }
+  });
+
+  function openNav() {
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.setAttribute('aria-label', 'Fechar menu de navegação');
+    navMenu.classList.add('open');
+  }
+
+  function closeNav() {
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Abrir menu de navegação');
+    navMenu.classList.remove('open');
+  }
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      if (navToggle.getAttribute('aria-expanded') === 'true') closeNav();
+      else openNav();
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+
+    document.addEventListener('click', e => {
+      if (navToggle.getAttribute('aria-expanded') !== 'true') return;
+      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) closeNav();
+    });
+  }
 </script>
 
 </body>

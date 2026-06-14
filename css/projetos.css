@@ -23,6 +23,19 @@
   border-radius: 10px 10px 0 0;
 }
 
+.proj-preview-btn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+  font: inherit;
+  color: inherit;
+}
+
 .proj-preview img {
   width: 100%;
   height: 100%;
@@ -33,7 +46,12 @@
   display: block;
 }
 
-.proj-item:hover .proj-preview img {
+.proj-item:hover .proj-preview-btn img {
+  opacity: 0.95;
+  transform: scale(1.02);
+}
+
+.proj-preview-btn:focus-visible img {
   opacity: 0.95;
   transform: scale(1.02);
 }
@@ -204,6 +222,7 @@
   color: #06b6d4;
   line-height: 1.2;
   margin-bottom: 1px;
+  font-variant-numeric: tabular-nums;
 }
 
 .proj-stat.amber {
@@ -214,25 +233,24 @@
 
 .proj-stat.amber .proj-stat-val { color: #f59e0b; }
 
-.destaque-content {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.destaque-text { flex: 1; }
+.destaque-text { flex: 1; min-width: 0; }
 
 .proj-item.destaque .proj-body {
-  grid-template-columns: 30px 1fr;
+  grid-template-columns: 30px 1fr auto;
+}
+
+.proj-item.destaque .proj-right {
+  min-width: 100px;
 }
 
 @media (max-width: 700px) {
   .proj-body { grid-template-columns: 30px 1fr; }
   .proj-right { grid-column: 2; align-items: flex-start; }
   .proj-chips { justify-content: flex-start; }
-  .destaque-content { flex-direction: column; }
-  .proj-stats { flex-direction: row; min-width: unset; }
+  .proj-stats { flex-direction: row; min-width: unset; width: 100%; }
   .proj-preview { height: 120px; }
+  .proj-item.destaque .proj-body { grid-template-columns: 30px 1fr; }
+  .proj-item.destaque .proj-right { grid-column: 2; }
 }
 
 /* LIGHTBOX */
@@ -245,9 +263,14 @@
   justify-content: center;
   z-index: 9999;
   cursor: zoom-out;
-  transition: background 0.3s;
+  transition: background 0.3s, opacity 0.3s;
   pointer-events: none;
   opacity: 0;
+  overscroll-behavior: contain;
+}
+
+.lightbox-overlay[hidden] {
+  display: none;
 }
 
 .lightbox-overlay.active {
@@ -281,8 +304,9 @@
   letter-spacing: 0.1em;
   cursor: pointer;
   transition: color 0.2s;
+  background: none;
+  border: none;
+  padding: 8px 12px;
 }
 
 .lightbox-close:hover { color: rgba(255,255,255,0.9); }
-
-.proj-preview img { cursor: zoom-in; }

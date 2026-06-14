@@ -45,6 +45,7 @@
   margin-bottom: 6px;
   text-shadow: 0 0 20px rgba(0, 240, 180, 0.3);
   font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
 }
 
 .stat-label {
