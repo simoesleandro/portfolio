@@ -4,12 +4,25 @@
   gap: 12px;
 }
 
+.proj-secondary-block {
+  margin-top: 34px;
+}
+
+.proj-list-secondary {
+  gap: 10px;
+}
+
 .proj-intro {
   max-width: 700px;
   margin: -8px 0 28px;
   font-size: 14px;
   line-height: 1.75;
   color: var(--muted3);
+}
+
+.proj-intro-secondary {
+  max-width: 620px;
+  margin: -8px 0 20px;
 }
 
 .proj-item {
@@ -155,43 +168,75 @@
 .proj-item:hover .proj-link { opacity: 1; }
 .proj-link svg { width: 10px; height: 10px; }
 
-/* DESTAQUE — Sentinela RJ */
+.sec-header-nested {
+  margin-top: 0;
+}
+
+.sec-title-nested {
+  font-size: 20px;
+}
+
+/* DESTAQUE — projeto principal */
 .proj-item.destaque {
   border: none;
   background: #080c12;
   position: relative;
   z-index: 0;
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.05), 0 14px 34px rgba(4, 10, 22, 0.34);
 }
 
 .proj-item.destaque::before {
   content: '';
   position: absolute;
-  inset: -1.5px;
-  border-radius: 11px;
-  background: linear-gradient(135deg, #06b6d4, #8b5cf6, #06b6d4, #a78bfa, #06b6d4);
-  background-size: 300% 300%;
-  animation: aurora-border 4s ease-in-out infinite;
+  inset: 0;
+  border-radius: 10px;
+  padding: 1px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 182, 212, 0.14) 0%,
+      rgba(6, 182, 212, 0.14) 28%,
+      rgba(139, 92, 246, 0.88) 42%,
+      rgba(6, 182, 212, 0.32) 50%,
+      rgba(6, 182, 212, 0.14) 58%,
+      rgba(6, 182, 212, 0.14) 100%
+    );
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: border-run 4.8s linear infinite;
   z-index: -1;
+  opacity: 0.72;
 }
 
 .proj-item.destaque::after {
   content: '';
   position: absolute;
-  inset: 1.5px;
-  border-radius: 9px;
+  inset: 1px;
+  border-radius: 10px;
   background: #080c12;
   z-index: -1;
 }
 
-@keyframes aurora-border {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes border-run {
+  from { background-position: 0% 50%; }
+  to { background-position: 220% 50%; }
 }
 
 .proj-item.destaque > * {
   position: relative;
   z-index: 1;
+}
+
+.proj-item.destaque .proj-preview {
+  height: 184px;
+}
+
+.proj-item.destaque .proj-body {
+  padding: 18px 22px;
 }
 
 .proj-badge {
