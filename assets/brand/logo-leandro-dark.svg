@@ -1,0 +1,13 @@
+<svg class="brand-svg" viewBox="0 0 420 132" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Leandro Simões">
+  <g transform="translate(0 0)" style="color:#111214">
+    <path d="M18 27 L70 2 L70 38 L18 63 Z" fill="currentColor"/>
+    <path d="M34 67 L72 48 L104 64 L66 83 Z" fill="#ff5a36"/>
+    <path d="M66 83 L104 64 L104 101 L53 128 L18 110 Z" fill="currentColor"/>
+  </g>
+  <line x1="125" y1="23" x2="125" y2="112" stroke="#111214" stroke-width="1.5" opacity=".55"/>
+  <g fill="#111214" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-weight="500" letter-spacing="-2">
+    <text x="145" y="58" font-size="49">Leandro</text>
+    <text x="145" y="106" font-size="49">Simões</text>
+  </g>
+  <rect x="369" y="102" width="32" height="4" rx="2" fill="#ff5a36"/>
+</svg>

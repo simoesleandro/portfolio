@@ -26,8 +26,18 @@ Portfólio pessoal publicado no GitHub Pages para apresentar minha transição d
 
 - HTML
 - CSS
-- JavaScript
+- JavaScript (sem frameworks nem dependências)
 - GitHub Pages
+
+## Estrutura
+
+- `index.html` — narrativa em capítulos (introdução, trajetória, projetos, laboratório, contato)
+- `css/style.css` — identidade visual e cenas de scroll storytelling (`position: sticky` + variáveis CSS)
+- `js/main.js` — aprimoramento progressivo: calcula o progresso de cada capítulo, menu mobile e lightbox
+- `assets/brand/` — logo e símbolo oficiais em SVG
+- `assets/preview/` — screenshots reais dos projetos
+
+Sem JavaScript, ou com `prefers-reduced-motion: reduce`, a página vira uma sequência normal de seções com todo o conteúdo visível.
 
 ## Objetivo
 
